@@ -1,0 +1,716 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ara Jean Canatoy | Portfolio</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    :root {
+      --cream: #f0eee8;
+      --silver: #c4c1b8;
+      --muted: #d0cec7;
+      --line: rgba(240, 238, 232, 0.22);
+    }
+
+    html {
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      color: var(--cream);
+      line-height: 1.8;
+      background-color: #111110;
+      background-image:
+        linear-gradient(
+          rgba(12, 12, 11, 0.32),
+          rgba(12, 12, 11, 0.53)
+        ),
+        url("profile/bg image.jpg");
+      background-position: center center;
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* NAVIGATION */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 100;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 16px 8%;
+      background: rgba(15, 15, 14, 0.72);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.8rem;
+      letter-spacing: 3px;
+      font-weight: 600;
+    }
+
+    .logo span {
+      color: var(--silver);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #e0ded7;
+      transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 140px 10% 75px;
+      position: relative;
+      background: transparent;
+    }
+
+    .hero-content {
+      max-width: 800px;
+    }
+
+    .profile-container {
+      width: 130px;
+      height: 130px;
+      padding: 4px;
+      margin-bottom: 28px;
+      border: 1px solid rgba(240, 238, 232, 0.75);
+      border-radius: 50%;
+      overflow: hidden;
+      background: rgba(20, 20, 20, 0.5);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.25);
+    }
+
+    .profile-image {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      color: var(--silver);
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(3.5rem, 8vw, 7rem);
+      font-weight: 500;
+      line-height: 0.98;
+      margin-bottom: 26px;
+      text-shadow: 0 3px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero h1 span {
+      display: block;
+      color: #d1cec5;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-description {
+      max-width: 560px;
+      color: #f0eee8;
+      font-size: 0.95rem;
+      margin-bottom: 32px;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 23px;
+      font-size: 0.72rem;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+      transition: 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--cream);
+      color: #151513;
+      border: 1px solid var(--cream);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(240, 238, 232, 0.75);
+      background: rgba(20, 20, 20, 0.18);
+      color: white;
+    }
+
+    .btn:hover {
+      background: #c4c1b8;
+      color: #111110;
+      border-color: #c4c1b8;
+      transform: translateY(-3px);
+    }
+
+    .hero-note {
+      margin-top: 55px;
+      color: #e0ded7;
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+    }
+
+    /* GENERAL SECTIONS */
+    section:not(.hero) {
+      padding: 85px 10%;
+      scroll-margin-top: 70px;
+    }
+
+    .section-label {
+      color: var(--silver);
+      font-size: 0.7rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(2.7rem, 5vw, 4.2rem);
+      line-height: 1.1;
+      font-weight: 500;
+      margin-bottom: 22px;
+    }
+
+    .section-description {
+      max-width: 680px;
+      color: #e0ded7;
+      font-size: 0.92rem;
+      margin-bottom: 35px;
+    }
+
+    /* ABOUT */
+    #about,
+    #skills,
+    #contact {
+      background: rgba(15, 15, 14, 0.28);
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.7fr;
+      gap: 35px;
+    }
+
+    .about-text p {
+      color: #e2e0d9;
+      margin-bottom: 18px;
+      font-size: 0.94rem;
+    }
+
+    .info-card {
+      padding: 24px;
+      background: rgba(19, 19, 18, 0.58);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(5px);
+    }
+
+    .info-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
+
+    .info-card p {
+      color: #e0ded7;
+      font-size: 0.85rem;
+      padding: 8px 0;
+      border-bottom: 1px solid rgba(240, 238, 232, 0.12);
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .project-card {
+      padding: 30px;
+      background: rgba(20, 20, 19, 0.67);
+      border: 1px solid var(--line);
+      backdrop-filter: blur(7px);
+      transition: 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(240, 238, 232, 0.6);
+      background: rgba(20, 20, 19, 0.8);
+    }
+
+    .project-number {
+      font-size: 0.7rem;
+      color: var(--silver);
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+    }
+
+    .project-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-weight: 500;
+      font-size: 2rem;
+      line-height: 1.2;
+      margin-bottom: 18px;
+    }
+
+    .project-card > p {
+      color: #dedcd5;
+      font-size: 0.88rem;
+      margin-bottom: 24px;
+    }
+
+    .project-role {
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+      color: #dedcd5;
+      font-size: 0.86rem;
+    }
+
+    .project-role strong {
+      display: block;
+      color: white;
+      margin-bottom: 8px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 22px;
+    }
+
+    .tag {
+      border: 1px solid rgba(240, 238, 232, 0.3);
+      background: rgba(10, 10, 10, 0.2);
+      padding: 4px 10px;
+      color: #eeece6;
+      font-size: 0.68rem;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0 25px;
+    }
+
+    .skill-card {
+      padding: 22px 15px;
+      border-top: 1px solid var(--line);
+      background: rgba(15, 15, 14, 0.3);
+    }
+
+    .skill-card h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 1.55rem;
+      font-weight: 500;
+      margin-bottom: 7px;
+    }
+
+    .skill-card p {
+      font-size: 0.84rem;
+      color: #e0ded7;
+    }
+
+    /* CONTACT */
+    #contact {
+      text-align: center;
+    }
+
+    #contact .section-description {
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .contact-card {
+      max-width: 650px;
+      margin: auto;
+      padding: 28px;
+      border: 1px solid var(--line);
+      background: rgba(15, 15, 14, 0.62);
+      backdrop-filter: blur(6px);
+    }
+
+    .contact-card p {
+      color: #e0ded7;
+      margin-bottom: 9px;
+      overflow-wrap: anywhere;
+    }
+
+    footer {
+      padding: 25px 15px;
+      text-align: center;
+      background: rgba(12, 12, 11, 0.72);
+      border-top: 1px solid var(--line);
+      color: #d0cec7;
+      font-size: 0.75rem;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      nav {
+        padding: 15px 5%;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .nav-links a {
+        font-size: 0.64rem;
+        letter-spacing: 0.5px;
+      }
+
+      .hero {
+        padding-left: 7%;
+        padding-right: 7%;
+      }
+
+      section:not(.hero) {
+        padding: 70px 7%;
+      }
+
+      .about-grid,
+      .projects-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      body {
+        background-attachment: scroll;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        gap: 8px 13px;
+      }
+
+      .hero {
+        padding-top: 165px;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      .profile-container {
+        width: 105px;
+        height: 105px;
+      }
+
+      .hero-note {
+        margin-top: 38px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .project-card {
+        padding: 24px;
+      }
+
+      .project-card h3 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <a href="#home" class="logo">ARA<span>.</span></a>
+
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <main>
+
+    <section class="hero" id="home">
+      <div class="hero-content">
+
+        <div class="profile-container">
+          <img
+            src="profile/profile image.jpg"
+            alt="Profile picture of Ara Jean Canatoy"
+            class="profile-image"
+          >
+        </div>
+
+        <div class="eyebrow">Personal Portfolio · 2026</div>
+
+        <h1>
+          Ara Jean
+          <span>Canatoy.</span>
+        </h1>
+
+        <p class="hero-description">
+          An aspiring technology professional with an interest in
+          meaningful digital solutions, software testing, project
+          coordination, and innovative ideas.
+        </p>
+
+        <div class="buttons">
+          <a href="#projects" class="btn btn-primary">
+            Explore Projects ↗
+          </a>
+          <a href="#about" class="btn btn-outline">
+            About Me
+          </a>
+        </div>
+
+        <div class="hero-note">
+          Creativity · Technology · Purpose
+        </div>
+
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="section-label">01 — Introduction</div>
+      <h2 class="section-title">Behind the Work.</h2>
+
+      <div class="about-grid">
+        <div class="about-text">
+          <p>
+            Hello, I'm Ara Jean Canatoy. I am interested in technology
+            and in creating projects that respond to practical,
+            real-world needs.
+          </p>
+
+          <p>
+            Through my project experiences, I have developed an
+            appreciation for collaboration, communication, user
+            acceptance testing, and presenting ideas clearly.
+          </p>
+
+          <p>
+            I believe that a meaningful project combines thoughtful
+            planning with a clear purpose. I look forward to learning
+            new skills and contributing to solutions that can make
+            a positive difference.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Areas of Interest</h3>
+          <p>Software Testing &amp; UAT</p>
+          <p>Project Coordination</p>
+          <p>Presentation &amp; Communication</p>
+          <p>Technology-Based Solutions</p>
+          <p>Creative Problem-Solving</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="section-label">02 — Selected Work</div>
+      <h2 class="section-title">Projects &amp; Ideas.</h2>
+
+      <p class="section-description">
+        A look at two projects exploring community assistance and
+        technology-supported nutrition.
+      </p>
+
+      <div class="projects-grid">
+
+        <article class="project-card">
+          <div class="project-number">PROJECT / 01</div>
+          <h3>Community Aid Network</h3>
+
+          <p>
+            A web application concept designed to help make community
+            assistance and access to relevant resources more organized
+            and accessible.
+          </p>
+
+          <div class="project-role">
+            <strong>Role — UAT Coordinator &amp; Pitch Presenter</strong>
+            Coordinated User Acceptance Testing activities to help
+            assess whether the application aligned with user needs.
+            Also presented the project concept, its purpose, and
+            its proposed value to an audience.
+          </div>
+
+          <div class="tag-list">
+            <span class="tag">Web Application</span>
+            <span class="tag">UAT</span>
+            <span class="tag">Coordination</span>
+            <span class="tag">Pitch Presentation</span>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-number">PROJECT / 02</div>
+          <h3>Smart Food with Built-In Nutrient Analysis for Gym</h3>
+
+          <p>
+            A machine-based project concept intended to help gym-goers
+            understand nutritional information and make more informed
+            food choices in support of their fitness goals.
+          </p>
+
+          <div class="project-role">
+            <strong>Focus — Smart Food &amp; Nutrition</strong>
+            Explores the use of a physical machine with built-in
+            nutrient analysis to connect food awareness with fitness
+            and everyday nutrition decisions.
+          </div>
+
+          <div class="tag-list">
+            <span class="tag">Machine-Based Project</span>
+            <span class="tag">Nutrient Analysis</span>
+            <span class="tag">Fitness</span>
+            <span class="tag">Food Technology</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-label">03 — Capabilities</div>
+      <h2 class="section-title">Skills &amp; Strengths.</h2>
+
+      <p class="section-description">
+        Professional strengths reflected in my project work and
+        collaborative experiences.
+      </p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <h3>UAT Coordination</h3>
+          <p>Supporting organized user acceptance testing activities.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Presentation</h3>
+          <p>Communicating project ideas and objectives clearly.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Communication</h3>
+          <p>Exchanging information and ideas with a team.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Collaboration</h3>
+          <p>Working with others toward shared project goals.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Problem-Solving</h3>
+          <p>Exploring practical approaches to project challenges.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Adaptability</h3>
+          <p>Continuing to learn and grow through new experiences.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section-label">05 — Contact</div>
+      <h2 class="section-title">Let's Connect.</h2>
+
+      <p class="section-description">
+        Open to learning, collaboration, and new opportunities
+        to explore meaningful technology solutions.
+      </p>
+
+      <div class="contact-card">
+        <p><strong>Name:</strong> Ara Jean Canatoy</p>
+        <p><strong>Email:</strong> arajeancanatoy8@gmail.com</p>
+        <p><strong>Location:</strong> blk4lot2, montville place subdivision, taytay rizal</p>
+        <p style="margin-top: 20px;">
+          Thank you for taking the time to explore my portfolio.
+        </p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 Ara Jean Canatoy. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
